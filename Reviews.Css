@@ -1,0 +1,133 @@
+body {
+    background-color: #eee;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: linear-gradient(to top, #d400d4, #a107a1);
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+i {
+    display: flex;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color: #fff;
+}
+
+i:hover {
+    animation: Rotate 0.5s linear;
+    scale: 1.1;
+}
+
+.Reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.Reviews > label {
+    font-size: 2rem;
+    color: #a107a1;
+    margin-bottom: 10px;
+}
+
+/* Input Bar Container */
+.InputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50px;
+    border: 2px solid #a107a1;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.InputContainer input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #a107a1;
+    outline: none;
+}
+
+.InputContainer input::placeholder {
+    color: #a107a1a1;
+}
+
+.InputContainer button {
+    background-color: #a107a1;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.InputContainer button:hover {
+    background-color: #d400d4;
+    transform: scale(1.05);
+}
+
+/* Review Cards */
+.HasElements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.Review {
+    background-color: #fff;
+    color: #a107a1;
+    border-radius: 10px; 
+    padding: 15px 25px;
+    font-weight: bolder;
+    transition: 0.3s;
+    border-left: 6px solid #a107a1;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.05);
+}
+
+.Review:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.fa-star {
+    color: #fff000;
+    animation: Rotate 0.5s linear;
+    scale: 1.3;
+}
+
+@keyframes Rotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
