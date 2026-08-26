@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Jemo.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style id="ThemeStyle"></style>
+    <title>Jemo | Adham Mostafa Omar Taha</title>
+</head>
+
+<body>
+    <nav>
+        <div class="Links">
+            <a href="#Home">Home</a>
+
+            <a href="#Products">Products</a>
+
+            <a href="#Reviews">Reviews</a>
+
+            <a href="#Contact">Contact Me</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="Home" id="Home">
+            <div class="Name">
+                <label>J</label>
+                <label>E</label>
+                <label>M</label>
+                <label>O</label>
+            </div>
+        </div>
+
+        <div class="Products" id="Products">
+            <div class="SearchBar">
+                <div class="SearchBarBG">
+                    <input type="text" id="SearchInp" placeholder="Search">
+                    <button id="SearchBtn" onclick="searchProducts()">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Reviews" id="Reviews">
+            <div class="ReviewsBar">
+                <div class="ReviewsBarBG">
+                    <input type="text" id="ReviewsInp" placeholder="Review">
+                    <button id="ReviewsBtn" onclick="SendReview()">Send</button>
+                </div>
+            </div>
+
+            <div class="ReviewsDiv">
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="Contact">
+        <div class="Left">
+            <label for="Contact Me">Contact <label>Me</label></label>
+        </div>
+
+        <div class="Right">
+            <div class="Socials">
+                <div class="Social">
+                    <label for="Phone Number">Phone Number</label>
+                    <a href="tel:+20 106 3270 608">+20 155 6348 081</a>
+                </div>
+
+                <div class="Social">
+                    <label for="Email">Emails</label>
+                    <a href="mailto:adhamkrom20@gmail.com">adham.mostafa14227@gmail.com</a><br>
+                    <a href="mailto:adhamkrom20@gmail.com">adhamkrom20@gmail.com</a>
+                </div>
+
+                <div class="FollowMe">
+                    <label for="Follow Me ">Follow Me</label><br>
+                    <div class="Links">
+                        <a href="https://github.com/Adham-Mostafa14227" class="Account" style="--LogoColor: #181717;"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/adham-mostafa-0545023a7/" class="Account"
+                            style="--LogoColor: #0A66C2;" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/profile.php?id=61578969137540" class="Account"
+                            style="--LogoColor: #1877F2;" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="https://adham-mostafa14227.itch.io/" class="Account" style="--LogoColor: #FA5C5C;"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-itch-io"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="Switch" onclick="ChangeMode()">
+        <div class="Button"></div>
+    </div>
+
+    <script src="Jemo.JS"></script>
+</body>
+
+</html>

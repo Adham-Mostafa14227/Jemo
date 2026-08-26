@@ -1,0 +1,608 @@
+* {
+    font-family: sans-serif;
+    --BG: #181024;
+    --Surface: #261A38;
+    --Surface2: #34244B;
+    --Primary: #00BCD4;
+    --PrimaryLight: #4DD0E1;
+    --Text: #F5F3F7;
+    --Muted: #A093B1;
+    --Border: rgba(255, 255, 255, 0.08);
+    --Shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    --Radius: 16px;
+}
+
+body {
+    background: var(--BG);
+    margin: 0;
+    padding: 0;
+    color: var(--Text);
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+main .Home {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
+}
+
+main .Name label {
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5rem;
+    color: var(--Muted);
+    user-select: none;
+}
+
+main .Name label:nth-child(1) {
+    display: inline-block;
+    animation: LogoUpDown 2s ease-in-out infinite;
+}
+
+main .Name label:nth-child(2) {
+    display: inline-block;
+    animation: LogoDownUp 2s ease-in-out infinite;
+}
+
+main .Name label:nth-child(3) {
+    display: inline-block;
+    animation: LogoUpDown 2s ease-in-out infinite;
+}
+
+main .Name label:nth-child(4) {
+    display: inline-block;
+    animation: LogoDownUp 2s ease-in-out infinite;
+}
+
+nav {
+    position: fixed;
+    bottom: 20px;
+    Left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 20px;
+    color: var(--Muted);
+    font-weight: bolder;
+    text-decoration: none;
+    border-bottom: 3px solid var(--Surface);
+    transition: border-color 0.5s ease-in-out;
+}
+
+nav a:hover {
+    border-bottom-color: var(--Muted);
+}
+
+nav a.active {
+    border-bottom-color: var(--PrimaryLight);
+    color: var(--PrimaryLight);
+}
+
+nav .Links {
+    width: 80%;
+    background: var(--Surface);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border: 1px solid var(--Border);
+}
+
+.Products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20vh;
+}
+
+.SearchBar {
+    width: 100%;
+    background-color: var(--Accent);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.SearchBar .SearchBarBG {
+    width: 40vw;
+    background-color: var(--Muted);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.SearchBar input {
+    background-color: var(--Muted);
+    outline: none;
+    width: 33vw;
+    padding: 5px;
+    color: var(--Surface);
+    font-size: 1.1em;
+    border: none;
+}
+
+.SearchBar input::placeholder {
+    color: var(--Surface);
+    opacity: 0.5;
+}
+
+.SearchBar button {
+    height: 35px;
+    padding: 5px 10px;
+    background-color: var(--Surface2);
+    border: none;
+    border-radius: 10px;
+    color: var(--Text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.SearchBar button:hover {
+    transform: translateY(-5px) translateX(5px);
+    box-shadow: -5px 5px 0 0 var(--Text);
+    transition: 0.5s;
+}
+
+.SearchBar button:active {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: 0 0 0 0 var(--Text);
+    transition: 0.5s;
+}
+
+.ProductCard {
+    background-color: var(--Surface2);
+    margin: 20px;
+    padding: 20px;
+    height: 250px;
+    width: 230px;
+    border-radius: 10px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.ProductCard:hover {
+    transform: scale(1.025);
+}
+
+.ProductCard img {
+    height: 222px;
+    border-radius: 10px;
+    transition: 0.5s;
+    user-select: none;
+}
+
+.ProductCard img:hover {
+    transform: translateY(-5px) translateX(5px);
+    box-shadow: -10px 10px 0 0 var(--Muted);
+    transition: 0.5s;
+}
+
+.ProductCard img:active {
+    transform: translateY(0) translateX(0);
+    box-shadow: 0 0 0 0 var(--Muted);
+    transition: 0.5s;
+}
+
+.ProductCard label {
+    background-color: var(--Surface2);
+    padding: 10px 20px;
+    padding-top: 5px;
+    display: none;
+    opacity: 0;
+    width: 230px;
+    transform: translateX(-20px) translateY(-10px);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
+    color: var(--Muted);
+    user-select: none;
+}
+
+.ProductCard:hover label {
+    transition: opacity 1s;
+    display: block;
+    opacity: 1;
+}
+
+.ProductCard p {
+    background-color: var(--Surface2);
+    padding: 10px 20px;
+    padding-top: 5px;
+    display: none;
+    opacity: 0;
+    width: 230px;
+    transform: translateX(-20px) translateY(-10px);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
+    color: var(--Muted);
+    user-select: none;
+}
+
+.ProductCard:hover p {
+    transition: opacity 1s;
+    display: block;
+    opacity: 1;
+}
+
+.Reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: top;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.ReviewsBar {
+    width: 100%;
+    background-color: var(--Accent);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 10vh;
+}
+
+.ReviewsBar .ReviewsBarBG {
+    width: 40vw;
+    background-color: var(--Muted);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ReviewsBar input {
+    background-color: var(--Muted);
+    outline: none;
+    width: 33vw;
+    padding: 5px;
+    color: var(--Surface);
+    font-size: 1.1em;
+    border: none;
+}
+
+.ReviewsBar input::placeholder {
+    color: var(--Surface);
+    opacity: 0.5;
+}
+
+.ReviewsBar button {
+    height: 35px;
+    padding: 5px 10px;
+    background-color: var(--Surface2);
+    border: none;
+    border-radius: 10px;
+    color: var(--Text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.ReviewsBar button:hover {
+    transform: translateY(-5px) translateX(5px);
+    box-shadow: -5px 5px 0 0 var(--Text);
+    transition: 0.5s;
+}
+
+.ReviewsBar button:active {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: 0 0 0 0 var(--Text);
+    transition: 0.5s;
+}
+
+.ReviewsDiv {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}
+
+.Review {
+    background-color: var(--Muted);
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 10px 0;
+    margin-left: 5vw;
+    max-width: 30vw;
+}
+
+.Review::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-top: 12.5px solid var(--Muted);
+    transform: rotate(90deg) translateY(45px) translateX(-5px);
+}
+
+.Review label {
+    display: inline-block;
+    max-width: 30vw;
+    overflow-wrap: break-word;
+}
+
+#Contact {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Surface2);
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 50px 10%;
+    box-sizing: border-box;
+}
+
+#Contact .Left {
+    flex: 1;
+}
+
+#Contact .Left label {
+    font-size: 40px;
+    color: var(--Muted);
+    font-weight: bolder;
+}
+
+#Contact .Left label label {
+    color: var(--Primary);
+}
+
+#Contact .Right {
+    flex: 1;
+}
+
+.Socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.Social {
+    background-color: var(--Surface);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--Muted);
+}
+
+.Social,
+.FollowMe {
+    display: flex;
+    flex-direction: column;
+}
+
+.Social label,
+.FollowMe label {
+    color: var(--PrimaryLight);
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.Social a {
+    color: var(--Text);
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-left: 30px;
+}
+
+.Social a:hover {
+    transform: translateX(10px);
+    color: var(--Primary);
+}
+
+.Social a:focus {
+    user-select: all;
+}
+
+.Links {
+    display: flex;
+    gap: 15px;
+}
+
+.Account {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--Border);
+    border-radius: 50%;
+    color: var(--Text);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.Account i {
+    font-size: 18px;
+}
+
+.Account:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--LogoColor);
+    transform: translateY(-10px) scale(1.1);
+}
+
+.Switch {
+    height: 25px;
+    margin: 10px;
+    width: 60px;
+    padding: 5px;
+    background-color: var(--Muted);
+    border: 1px solid var(--BG);
+    border-radius: 10px;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.Button {
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 360px;
+    background-color: var(--BG);
+    border-radius: 10px;
+    transition: 0.5s;
+    position: relative;
+    cursor: pointer;
+}
+
+.Button:hover {
+    scale: 1.05;
+}
+
+.Switch:hover {
+    scale: 1.05;
+}
+
+@media (max-width: 700px) {
+    .Home {
+        flex-direction: column;
+    }
+
+    .Home img {
+        height: 150px;
+        width: 150px;
+        margin-top: 0;
+    }
+
+    .Home .Description {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .Home label {
+        margin-bottom: 4px;
+    }
+
+    nav {
+        bottom: 0;
+    }
+
+    nav .Links {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    nav a {
+        border-width: 0;
+        margin: 5px;
+    }
+
+    .SearchBar .SearchBarBG {
+        width: 90vw;
+        background-color: var(--Muted);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .SearchBar input {
+        width: 90%;
+    }
+
+    .ReviewsBar .ReviewsBarBG {
+        width: 90vw;
+        background-color: var(--Muted);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .ReviewsBar input {
+        width: 90%;
+    }
+
+    #Contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 40px 8%;
+    }
+
+    #Contact .Left label {
+        font-size: 32px;
+        height: 50vh;
+    }
+
+    #Contact .Right {
+        padding-bottom: 10vh;
+    }
+
+    .Socials {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .Account:hover {
+        background-color: transparent;
+        border-color: var(--Border);
+        color: var(--Text);
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes LogoUpDown {
+
+    0%,
+    100% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes LogoDownUp {
+
+    0%,
+    100% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
